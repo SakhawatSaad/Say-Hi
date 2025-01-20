@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Say Hi</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="don_t_have_an_account_create_account">Don\'t Have an Account! Create Account?</string>
+    <string name="sing_in">Sing In</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="sing_up">Sing Up</string>
+    <string name="already_have_an_account_sing_in">Already Have an Account! Sing In</string>
+</resources>

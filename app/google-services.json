@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "289839864631",
+    "project_id": "say-hi-c7316",
+    "storage_bucket": "say-hi-c7316.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289839864631:android:e4352ab4fdbc858010d8b2",
+        "android_client_info": {
+          "package_name": "com.shsaad.sayhi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAG7oXhHdJF90nDluGgBEqKVrOaSK7RD9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
