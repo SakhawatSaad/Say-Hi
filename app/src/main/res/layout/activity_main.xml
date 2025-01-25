@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.activites.MainActivity">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/log_out_btn"
@@ -21,6 +21,31 @@
         tools:layout_editor_absoluteX="20dp"
         app:layout_constraintTop_toTopOf="parent"/>
 
+
+
+
+
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/log_out_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+
+        android:id="@+id/btnNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

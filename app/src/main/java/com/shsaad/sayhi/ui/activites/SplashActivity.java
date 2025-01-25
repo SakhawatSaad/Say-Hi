@@ -1,4 +1,4 @@
-package com.shsaad.sayhi;
+package com.shsaad.sayhi.ui.activites;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.shsaad.sayhi.R;
 
 public class SplashActivity extends AppCompatActivity {
 

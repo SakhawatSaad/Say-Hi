@@ -1,4 +1,4 @@
-package com.shsaad.sayhi;
+package com.shsaad.sayhi.ui.activites;
 
 import static com.shsaad.sayhi.Utils.showAlert;
 
@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.shsaad.sayhi.R;
 import com.shsaad.sayhi.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
