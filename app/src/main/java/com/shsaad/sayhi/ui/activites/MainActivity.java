@@ -4,11 +4,16 @@ import static com.shsaad.sayhi.R.*;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -33,9 +38,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-
-        EdgeToEdge.enable(this);
         setContentView(binding.getRoot());
+
+        Toolbar toolbar = findViewById(id.mytoolbar);
+        setSupportActionBar(toolbar);
+
 
 
         fragmentManager = getSupportFragmentManager();
@@ -43,13 +50,13 @@ public class MainActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
 
-        binding.logOutBtn.setOnClickListener(view -> {
-            firebaseAuth.signOut();
-            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-            finish();
-
-
-        });
+//        binding.logOutBtn.setOnClickListener(view -> {
+//            firebaseAuth.signOut();
+//            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+//            finish();
+//
+//
+//        });
 
 
 
@@ -72,4 +79,42 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater menuInflater = getMenuInflater();
+
+        menuInflater.inflate(R.menu.top_menu,menu);
+
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int itemId = item.getItemId();
+        if (itemId == id.homeMenuTop) {
+            Toast.makeText(this, "TopClicked", Toast.LENGTH_SHORT).show();
+        } else if (itemId == id.logoutMenuTop) {
+            logout();
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void logout() {
+
+        firebaseAuth.signOut();
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class
+        ));
+        finish();
+
+    }
 }
+
+
+
+  

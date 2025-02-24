@@ -17,6 +17,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.shsaad.sayhi.User_Adpter;
 import com.shsaad.sayhi.databinding.FragmentUserBinding;
 import com.shsaad.sayhi.ui.User;
 
@@ -27,10 +28,10 @@ import java.util.List;
 public class UserFragment extends Fragment {
 
 
-
     public UserFragment() {
         // Required empty public constructor
     }
+
     FragmentUserBinding binding;
 
     DatabaseReference databaseReference;
@@ -41,27 +42,29 @@ public class UserFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        binding= FragmentUserBinding.inflate(inflater,container,false);
+        binding = FragmentUserBinding.inflate(inflater, container, false);
         userList = new ArrayList<>();
-        firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("user").child(firebaseUser.getUid());
+        databaseReference = FirebaseDatabase.getInstance().getReference("user");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                User user = snapshot.getValue(User.class);
-                Log.i("TAG", "onDataChange: " + user.getUserName());
-//                for (DataSnapshot ds : snapshot.getChildren()){
-//
-//                    User user = ds.getValue(User.class);
-//                    userList.add(user);
-//
-//                    Log.i("TAG", "onDataChange: " + user.getUserName());
-//
+                for (DataSnapshot ds : snapshot.getChildren()) {
 
-//                }
+                    User user = ds.getValue(User.class);
+                    userList.add(user);
+
+
+                }
+
+                User_Adpter adpter = new User_Adpter(getContext(), userList);
+                binding.recyclerView.setAdapter(adpter);
+
+
+//
 
                 Log.i("TAG", "onDataChange: " + userList.toString());
 

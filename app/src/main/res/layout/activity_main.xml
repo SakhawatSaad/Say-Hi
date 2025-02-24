@@ -7,20 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.activites.MainActivity">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/log_out_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:fontFamily="@font/bebas_neue"
-        android:text="@string/log_out"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textAllCaps="false"
-        android:background="@drawable/btn_bg"
-        tools:layout_editor_absoluteX="20dp"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <include
+        android:id="@+id/mytoolbar"
+        layout="@layout/my_toolbar"
 
+        />
 
 
 
@@ -32,7 +23,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/log_out_btn"
+        app:layout_constraintTop_toBottomOf="@id/mytoolbar"
         android:layout_width="match_parent"
         android:layout_height="0dp"/>
 
